@@ -18,9 +18,12 @@ sudo nvidia-docker cp ${FILE_PATH} "container_name":/aichallenge/weights/
 </pre>
 3. Check model's pretrained file name, image size, confidece threshold and batch size.
 
+
 4. Run mAP test and crosscheck model's mAP.
 
-5. Check there is no json file in /aichallenge/ directory.**Otherwise submit error occur.**
+
+5. Check there is no json file in /aichallenge/ directory. **Otherwise submit error occur.**
+
 
 6. Convert container environment to new docker image.
 <pre>
