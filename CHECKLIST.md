@@ -33,7 +33,7 @@
 	###### vi ~/.bashrc
 	###### alias python='root/miniconda3/bin/python'
 	
-10. upload and prey
+10. Upload the tar file and prey
 	
 	
 
