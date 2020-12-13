@@ -1,5 +1,7 @@
 # Docker Submit Checklist
 
+##### This is Checklist for IITP AI Grand Challenge docker submit form.
+
 1. Run docker container from given image. Mount IITP valid dataset path for further mAP test.
 
 	###### sudo nvidia-docker run -it --name "container_name" -v ${DATA_PATH} "image_name"
