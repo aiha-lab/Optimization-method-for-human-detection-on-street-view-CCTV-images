@@ -2,10 +2,14 @@
 
 #### This is Checklist for IITP AI Grand Challenge docker submit.
 
+***
+
 1. Run docker container from given image. Mount IITP valid dataset path for further mAP test.
-'''
+<pre>
+<code>
 sudo nvidia-docker run -it --name "container_name" -v ${DATA_PATH} "image_name"
-'''
+</code>
+</pre>
 2. Transfer the model pretrained file(.pt) to docker container environment. 
 '''
 sudo nvidia-docker cp ${FILE_PATH} "container_name":/aichallenge/weights/
@@ -15,7 +19,7 @@ sudo nvidia-docker cp ${FILE_PATH} "container_name":/aichallenge/weights/
 
 4. Run mAP test and crosscheck model's mAP.
 
-5. Check there is no json file in /aichallenge/ directory. Otherwise submit error occur.
+5. Check there is no json file in /aichallenge/ directory.**Otherwise submit error occur.**
 
 6. Convert container environment to new docker image.
 '''
