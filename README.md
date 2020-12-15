@@ -60,9 +60,12 @@ You can run old version by the command ```bash scripts/predict_old.sh```
 <tr>
 <td> Command </td>
 <td>
+
 ```bash iitp.sh``` (submitted)
 </td>
-<td> ```bash scripts/predict_chk.sh``` 
+<td> 
+
+```bash scripts/predict_chk.sh``` 
 </td>
 </tr>
 <tr>
