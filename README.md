@@ -54,6 +54,67 @@ Remove all json file
 
 You can run old version by the command ```bash scripts/predict_old.sh```  
 
+<table>
+<tr>
+<td>
+
+Before optimization
+</td>
+<td>
+
+Before num-thread tuning
+</td>
+<td> 
+
+Final optimization
+</td>
+</tr>
+<tr>
+<td>
+
+```bash
+[TIME] Set Model: 0.4797539710998535
+[TIME] Set DataLoader: 0.6640267372131348
+[TIME] Total Data Loading: 21.1922824382782
+[TIME] Total Data Preprocessing: 1.0619120597839355
+[TIME] Total Model Forward: 3.369990825653076
+[TIME] Total NMS: 10.082083225250244
+[TIME] Total Postprocessing: 6.487901926040649
+[TIME] Save JSON: 3.122708320617676
+[TIME] Final Score (Inference Time): 46.06066
+```
+</td>
+<td>
+
+```bash
+[TIME] Set Model: 0.4932844638824463
+[TIME] Set DataLoader: 1.6099259853363037
+[TIME] Total Data Loading: 10.260902881622314
+[TIME] Total Data Preprocessing: 0.07654070854187012
+[TIME] Total Model Forward: 4.588696241378784
+[TIME] Total NMS: 0.9312660694122314
+[TIME] Total Postprocessing: 0.9399559497833252
+[TIME] Save JSON: 1.6605088710784912
+[TIME] Final Score (Inference Time): 18.900789499282837
+```
+</td>
+<td>
+
+```bash
+[TIME] Set Model: 0.4765970706939697
+[TIME] Set DataLoader: 1.599604845046997
+[TIME] Total Data Loading: 3.299018144607544
+[TIME] Total Data Preprocessing: 0.07267594337463379
+[TIME] Total Model Forward: 4.18438982963562
+[TIME] Total NMS: 0.8949720859527588
+[TIME] Total Postprocessing: 0.8590140342712402
+[TIME] Save JSON: 1.6375606060028076
+[TIME] Final Score (Inference Time): 11.386500835418701
+```
+</td>
+</tr>
+</table>
+
 ### 2. About Time Checking  
 
 <table>
