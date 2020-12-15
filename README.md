@@ -140,6 +140,9 @@ Remove all json file
 </tr>
 </table>
 
+![image](https://user-images.githubusercontent.com/60534494/102202640-ecccce00-3f0a-11eb-9afa-3cfb0df0eabb.png)
+
+
 ### 3. Hardware Parameters
 
 We check that ```batch_size=32``` and ```num_threads=8``` is the best condition on V100.  
