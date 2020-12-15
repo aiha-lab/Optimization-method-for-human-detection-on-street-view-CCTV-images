@@ -144,6 +144,11 @@ Remove all json file
 
 We check that ```batch_size=32``` and ```num_threads=8``` is the best condition on V100.  
 
+![스크린샷 2020-12-12 오전 11 45 09](https://user-images.githubusercontent.com/60534494/102201017-eb9aa180-3f08-11eb-8456-bf30e0226564.png)
+
 https://user-images.githubusercontent.com/60534494/102200832-ae361400-3f08-11eb-8a1a-7cb5c6910cbe.png
 
+![스크린샷 2020-12-12 오전 11 52 41](https://user-images.githubusercontent.com/60534494/102201098-fe14db00-3f08-11eb-8879-c4255ec77e53.png)
+
 https://user-images.githubusercontent.com/60534494/102200883-bee68a00-3f08-11eb-9810-82cb3de7a034.png
+
