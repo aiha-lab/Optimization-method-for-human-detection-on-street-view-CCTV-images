@@ -51,3 +51,83 @@ Remove all json file
 | Main        | predict_old.py                          | predict.py                                        |
 | Data loader | ```utils/datasets.py#336```                   | ```kh_utils/datasets.py#90```<br>                           |
 | NMS         | ```utils/general.py#260```<br>(nms: line 331) | ```kh_utils/general.py#52```<br>(batched nms: line 113) |
+
+You can run old version by the command ```bash scripts/predict_old.sh```  
+
+### 2. About Time Checking  
+
+<table>
+<tr>
+<td> Command </td> <td> ```bash iitp.sh```(submitted) </td> <td> bash scripts/predict_chk.sh </td>
+</tr>
+<tr>
+<td> Result </td>
+<td>
+
+```bash
+Predict Start........
+================================================
+Data Path: /raid/iitpdata/images/val/
+Namespace(batch_size=32, conf_thres=0.008, data='/raid/iitpdata/images/val/', device='', img_size=960, iou_thres=0.5, max_det=30, num_queue=8, num_threads=8, weights='weights/wm0.05_960.pt')
+================================================
+Fusing layers...
+Resetting DALI loader
+Image shape: torch.Size([6, 3, 544, 960])
+t4_res_U0000000221.json saved
+[TIME] Set Model: 0.48934483528137207
+[TIME] Set DataLoader: 1.6480441093444824
+[TIME] Total Data Loading: 2.8038485050201416
+[TIME] Total Data Preprocessing: 0.13748860359191895
+[TIME] Total Model Forward: 4.888248443603516
+[TIME] Total NMS: 1.5890100002288818
+[TIME] Total Postprocessing: 0.8877518177032471
+[TIME] Save JSON: 1.648402214050293
+[TIME] Final Score (Inference Time): 12.44399905204773
+[TOTAL PARAMS] Total Num of Model Parameters: 103678
+Predict Done.........
+IITP mAP caclulate Start.........
+AP Score: 0.7245907193874522
+IITP mAP caclulate Done.........
+Remove all json file
+```
+</td>
+<td>
+
+```bash
+Predict Start........
+================================================
+Data Path: /raid/iitpdata/images/val/
+Namespace(batch_size=32, conf_thres=0.008, data='/raid/iitpdata/images/val/', device='', img_size=960, iou_thres=0.5, max_det=30, num_queue=8, num_threads=8, weights='weights/wm0.05_960.pt')
+================================================
+Fusing layers... 
+Resetting DALI loader
+t4_res_U0000000221.json saved
+[TIME] Set Model: 0.48699355125427246
+[TIME] Set DataLoader: 1.6262810230255127
+[TIME] Total Data Loading: 3.059208631515503
+[TIME] Total Data Preprocessing: 0.14332365989685059
+[TIME] Total Model Forward: 4.6812005043029785
+[TIME] Total NMS: 1.2890410423278809
+[TIME] Total Postprocessing: 0.8272891044616699
+[TIME] Save JSON: 1.6297228336334229
+[TIME] Final Score (Inference Time): 12.115106344223022
+Predict Done.........
+IITP mAP caclulate Start.........
+AP Score: 0.7245907193874522
+IITP mAP caclulate Done.........
+Remove all json file
+```
+</td>
+</tr>
+<tr>
+<td> Main file </td> 
+<td> 
+
+```predict.py``` 
+</td> 
+<td> 
+
+```predict_chk.py``` 
+</td> 
+</tr>
+</table>
