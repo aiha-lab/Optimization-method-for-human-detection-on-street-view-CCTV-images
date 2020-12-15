@@ -48,7 +48,7 @@ Remove all json file
 
 |             | Before optimization                     | After optimization (Submitted)                               |
 |-------------|-----------------------------------------|---------------------------------------------------|
-| Main        | predict_old.py                          | predict.py                                        |
+| Main        | ```predict_old.py```                          | ```predict.py```                                        |
 | Data loader | ```utils/datasets.py#336```                   | ```kh_utils/datasets.py#90```<br>                           |
 | NMS         | ```utils/general.py#260```<br>(nms: line 331) | ```kh_utils/general.py#52```<br>(batched nms: line 113) |
 
