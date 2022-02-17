@@ -216,3 +216,49 @@ https://user-images.githubusercontent.com/60534494/102200832-ae361400-3f08-11eb-
 
 https://user-images.githubusercontent.com/60534494/102200883-bee68a00-3f08-11eb-9810-82cb3de7a034.png
 
+## About Codes  
+
+### Dataloader with NVIDIA DALI for speedup  
+```py
+#kh_utils/datasets.py
+from nvidia.dali.pipeline import Pipeline
+from nvidia.dali.plugin.pytorch import DALIClassificationIterator
+import nvidia.dali.ops as ops
+import nvidia.dali.types as types
+
+img_formats = ['bmp', 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'dng']  # acceptable image suffixes
+
+def create_dataloader(path, image_size, batch_size, stride, device_id=0, num_workers=8, queue_depth=8):
+    pipeline = ImageFolderValidPipe(batch_size, num_workers, device_id, path, image_size, stride,
+                                    mean=0.0, stddev=255.0, queue_depth=queue_depth)
+    pipeline.build()
+    loader = DALIValidIterator(pipeline)
+    return loader
+```
+NVIDIA DALI reduces the time for data loading 17.46s to 0.25s
+
+### NMS + Postprocessing
+```py
+#predict.py
+# --------------------------------------------------------------------------------  #
+# NMS
+
+# output = non_max_suppression(inf_out, max_det=max_det,
+#                              conf_thres=conf_thres, iou_thres=iou_thres,
+#                              return_per_image=True)  # (FP32, GPU)
+output, out_indices = non_max_suppression(inf_out, max_det=max_det,
+                                          conf_thres=conf_thres, iou_thres=iou_thres,
+                                          return_per_image=False)  # (FP32, GPU)
+nms_duration += tracker.update()
+
+# --------------------------------------------------------------------------------  #
+# Postprocess Results
+# scale_coords((height, width), output[:, :4], shapes[0][0], shapes[0][1])  # inplace change
+output[:, [0, 2]] *= (ORIG_WIDTH / width)
+output[:, [1, 3]] *= (ORIG_HEIGHT / height)
+clip_coords(output[:, :4], (ORIG_HEIGHT, ORIG_WIDTH)
+```
+Because the whole datasets' image size is same, we scale-down the bbox at a once.  
+This optimization reduces the time for nms+bbox-labeling 17.59s to 2.13s
+
+
