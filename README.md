@@ -35,22 +35,9 @@ Task: 사람 검출 (Human detection)
 YOLO model의 width multiplier 계수를 조절하는 방법을 통해 파라미터 갯수를 7,246,518개에서 **103,678개**(98.6% pruning)로 줄임.   
 
 ## 코드 실행 방법
-
-```bash
-bash iitp.sh
-```
-
-If you want to test other models, change weight path and image size in ```Namespace``` of ```predict.py``` (Line 201).
-- Weight path: weights/wm0.05_960.pt (best score)  
-- img_size = 960  
-
-# AI Challenge 4th - Track 4 (Dec 2020)
-
 Reference code: https://github.com/ultralytics/yolov5  
 Contributors: Kyuhong Shim(@SNU), Minsoo Kim(@HYU), Janghwan Lee(@HYU)  
 This repo contains inference code for YOLOv5.  
-
-## Commands and infos   
 
 ```bash
 bash iitp.sh
