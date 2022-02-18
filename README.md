@@ -31,8 +31,8 @@ Task: 사람 검출 (Human detection)
 사람이 있는 곳에 Bounding Box를 잘 표기하는 것을 볼 수 있음.  
 대회의 test dataset에 대해 **72.9**의 mAP를 달성함.  
 
-## 모델 경량화: 압축률
-YOLO model의 width multiplier 계수를 조절하는 방법을 통해 파라미터 갯수를 7,246,518개에서 103,678개(98.6% pruning)로 줄임.
+## 모델 경량화
+YOLO model의 width multiplier 계수를 조절하는 방법을 통해 파라미터 갯수를 7,246,518개에서 **103,678개(98.6% pruning)**로 줄임.   
 
 ## 코드 실행 방법
 
