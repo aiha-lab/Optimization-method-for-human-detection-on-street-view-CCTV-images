@@ -302,4 +302,5 @@ Because the whole datasets' image size is same, we scale-down the bbox at a once
 This optimization reduces the time for nms+bbox-labeling 17.59s to 2.13s
 
 
-
+# LICENSE
+GNU General Public License v3.0
